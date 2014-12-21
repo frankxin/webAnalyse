@@ -1,0 +1,13 @@
+127.0.0.1 - - [21/Dec/2014:17:02:23 +0800] "GET /phpmyadmin/js/navigation.js HTTP/1.1" 200 3916
+127.0.0.1 - - [21/Dec/2014:17:02:23 +0800] "GET /phpmyadmin/themes/original/img/b_home.png HTTP/1.1" 200 370
+127.0.0.1 - - [21/Dec/2014:17:02:23 +0800] "GET /phpmyadmin/themes/original/img/logo_left.png HTTP/1.1" 200 6854
+127.0.0.1 - - [21/Dec/2014:17:02:23 +0800] "GET /phpmyadmin/js/functions.js HTTP/1.1" 200 40801
+127.0.0.1 - - [21/Dec/2014:17:02:23 +0800] "GET /phpmyadmin/main.php?lang=zh-utf-8&convcharset=iso-8859-1&collation_connection=utf8_unicode_ci&token=fa86156ddc04101fcff5812a7a4439a6 HTTP/1.1" 200 7704
+127.0.0.1 - - [21/Dec/2014:17:02:23 +0800] "GET /phpmyadmin/phpmyadmin.css.php?token=fa86156ddc04101fcff5812a7a4439a6&js_frame=left&nocache=3788906885 HTTP/1.1" 200 3959
+127.0.0.1 - - [21/Dec/2014:17:02:24 +0800] "GET /phpmyadmin/themes/original/img/s_warn.png HTTP/1.1" 200 261
+127.0.0.1 - - [21/Dec/2014:17:02:24 +0800] "GET /phpmyadmin/favicon.ico HTTP/1.1" 200 18902
+127.0.0.1 - - [21/Dec/2014:17:02:40 +0800] "POST /member.php HTTP/1.1" 404 208
+127.0.0.1 - - [21/Dec/2014:17:03:37 +0800] "GET /shopping/login.php HTTP/1.1" 200 986
+127.0.0.1 - - [21/Dec/2014:17:03:37 +0800] "GET /css/style.css HTTP/1.1" 404 211
+127.0.0.1 - - [21/Dec/2014:17:03:37 +0800] "GET /dist/css/bootstrap.css HTTP/1.1" 404 220
+127.0.0.1 - - [21/Dec/2014:17:03:47 +0800] "POST /member.php HTTP/1.1" 404 208
