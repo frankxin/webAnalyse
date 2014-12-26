@@ -9,8 +9,8 @@ var db = mysql.createConnection({
 });
 
 var option = {
-	update : true,
-	refresh : 3600000, //should be 3600000
+	update : false,
+	refresh : 86400000, //should be 3600000
 	cp: 0    //read log last pointer
 }
 
@@ -31,14 +31,14 @@ db.connect(function(err) {
 			console.log(a);
 
 			var ss = {};
-			for (var i = 0; i < 31; i++) {
+			for (var i = 0; i < 25; i++) {
 				var tempa = [];
 				if (i < 10) {
 					var c = i + 1,
 						day = '0' + c;
-					tempa = Method.init.generateDay(2014, 'May', day);
+					tempa = Method.init.generateDay(2014, 'Dec', day);
 				} else {
-					tempa = Method.init.generateDay(2014, 'May', i + 1);
+					tempa = Method.init.generateDay(2014, 'Dec', i + 1);
 				}
 		     	arrInit.push(tempa);
 				var s = Method.init.generateDayCount(tempa);
@@ -59,8 +59,6 @@ db.connect(function(err) {
 				db.query('INSERT INTO dayTable SET ?', post, function(err) {
 					if (err) {
 						throw err;
-					} else {
-						console.log('succesful!!!!!!!!');
 					}
 				})
 			}
@@ -107,8 +105,6 @@ db.connect(function(err) {
 						db.query('INSERT INTO dayTable SET ?' , post , function(err){
 							if (err) {
 								throw err;
-							}else{
-								console.log('success!!!!!!');
 							}
 						})
 					}
@@ -129,8 +125,6 @@ db.connect(function(err) {
 						var query = db.query("UPDATE dayTable SET ? WHERE date = ?",[post_count , s], function(err) {
 							if (err) {
 								throw err;
-							} else {
-								console.log('succesful!!!!!!!!');
 							}
 						})
 					}
@@ -155,7 +149,14 @@ var regAllTime = /(\d+)\/(\S+)\/([\d]+):([\d]+):[\S]+[\s\S]+/ ,
 
 var Method = {
 	init : {
-		generateDay : function(year , month , day){
+		/**
+		 * [generateDay description]
+		 * @param  {[type]} year
+		 * @param  {[type]} month
+		 * @param  {[type]} day
+		 * @return {[type]}
+		 */
+		generateDay : function (year , month , day){
 			var arr = [],
 			    str = '';
 			str = year + '-' + month + '-' + day;
@@ -243,6 +244,10 @@ Array.prototype.distinction = function() {
 	};
 	return r;
 }
+/**
+ * [countIt count how many times for each distinct item]
+ * @return {[object]}
+ */
 Array.prototype.countIt = function(){
 	var n = {},
 	    m = {},
@@ -262,7 +267,11 @@ Array.prototype.countIt = function(){
 }
 
 /**  business logic start  **/
-
+/**
+ * [readFile description]
+ * @param  path{[String]}
+ * @param  callback{Function}
+ */
 function readFile(path , callback) {
 	fs.readFile(path , function(err, logData) {
 
@@ -271,19 +280,6 @@ function readFile(path , callback) {
 		callback(logTimeArr);
 
 		//console.log(logTimeArr);
-
 	});
 }
 
-
-
-
-// db.query("insert into dayTable(date , count)values('2014-1-2&&15' , '15')", function(err) {
-
-// 	if (err) {
-// 		throw err;
-// 	} else {
-// 		console.log("add 1 item");
-// 	}
-
-// });
